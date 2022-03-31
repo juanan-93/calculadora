@@ -21,3 +21,18 @@ sumar.addEventListener("click", () =>{
     pantalla.value += sumar.value
 })    
 
+restar.addEventListener("click", () =>{
+    pantalla.value += restar.value
+})    
+
+dividir.addEventListener("click", () =>{
+    pantalla.value += dividir.value
+})    
+
+porcentaje.addEventListener("click", () =>{
+    pantalla.value += porcentaje.value
+})    
+
+borrar.addEventListener("click", () =>{
+    pantalla.value.remove()});
+
