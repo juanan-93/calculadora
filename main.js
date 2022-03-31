@@ -23,6 +23,8 @@ numeros.forEach(numero => {
         }else{
             pantalla.value += numero.value;
         }
+
+        if(pantalla.value ==  )
     })    
 });
 
