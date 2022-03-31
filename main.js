@@ -7,18 +7,31 @@ let sumar = document.getElementById("sumar");
 let porcentaje = document.getElementById("porcentaje");
 let ac = document.getElementById("ac");
 let igual = document.getElementById("igual");
-let ans = document.getElementById("ans");
+let punto = document.getElementById("punto");
 let borrar = document.getElementById("borrar");
 
 
+
 numeros.forEach(numero => {
+
     numero.addEventListener("click", () =>{
-        pantalla.value += numero.value
+
+        if(pantalla.value == 0 && numero.value == 0 ){
+            pantalla.value = "0";
+        }else if(pantalla.value == 0 && numero.value != 0){
+            pantalla.value = numero.value;
+        }else{
+            pantalla.value += numero.value;
+        }
     })    
 });
 
 sumar.addEventListener("click", () =>{
     pantalla.value += sumar.value
+})
+
+multiplicar.addEventListener("click", () =>{
+    pantalla.value += multiplicar.value
 })    
 
 restar.addEventListener("click", () =>{
@@ -29,10 +42,18 @@ dividir.addEventListener("click", () =>{
     pantalla.value += dividir.value
 })    
 
-porcentaje.addEventListener("click", () =>{
-    pantalla.value += porcentaje.value
+punto.addEventListener("click", () =>{
+    pantalla.value += punto.value
 })    
 
-borrar.addEventListener("click", () =>{
-    pantalla.value.remove()});
+igual.addEventListener("click", () => {
+    pantalla.value = eval(pantalla.value);
+});
 
+borrar.addEventListener("click", () =>{
+    pantalla.value = "0";
+});
+
+ac.addEventListener("click", () =>{
+    pantalla.value = pantalla.value.substring(0, pantalla.value.length - 1);
+});
