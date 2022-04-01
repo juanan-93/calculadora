@@ -20,9 +20,13 @@ numeros.forEach(numero => {
             pantalla.value = "0";
         }else if(pantalla.value == 0 && numero.value != 0){
             pantalla.value = numero.value;
-        }else{
-            pantalla.value += numero.value;
+        }else if(pantalla.value == numero.value + punto.value){
+            pantalla.value + numero.value
         }
+        else{
+            pantalla.value += numero.value;
+        }     
+
     })    
 });
 
