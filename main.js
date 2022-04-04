@@ -10,8 +10,6 @@ let igual = document.getElementById("igual");
 let punto = document.getElementById("punto");
 let borrar = document.getElementById("borrar");
 
-
-
 numeros.forEach(numero => {
 
     numero.addEventListener("click", () =>{
@@ -20,34 +18,60 @@ numeros.forEach(numero => {
             pantalla.value = "0";
         }else if(pantalla.value == 0 && numero.value != 0){
             pantalla.value = numero.value;
-        }else if(pantalla.value == numero.value + punto.value){
-            pantalla.value + numero.value
         }
         else{
             pantalla.value += numero.value;
         }     
-
     })    
 });
 
+
 sumar.addEventListener("click", () =>{
-    pantalla.value += sumar.value
-})
+
+    if(!pantalla.value.includes(sumar.value)){
+        pantalla.value += sumar.value;
+    }else{
+        pantalla.value = eval(pantalla.value);
+    }
+});
 
 multiplicar.addEventListener("click", () =>{
-    pantalla.value += multiplicar.value
+    if(!pantalla.value.includes(multiplicar.value)){
+        pantalla.value += multiplicar.value;
+    }else{
+        pantalla.value = eval(pantalla.value);
+    }
 })    
 
 restar.addEventListener("click", () =>{
-    pantalla.value += restar.value
+    if(!pantalla.value.includes(restar.value)){
+        pantalla.value += restar.value;
+    }else{
+        pantalla.value = eval(pantalla.value);
+    }
 })    
 
 dividir.addEventListener("click", () =>{
-    pantalla.value += dividir.value
+    if(!pantalla.value.includes(dividir.value)){
+        pantalla.value += dividir.value;
+    }else{
+        pantalla.value = eval(pantalla.value);
+    }
 })    
 
 punto.addEventListener("click", () =>{
-    pantalla.value += punto.value
+
+    if(pantalla.value.split(".").length == 1){
+        pantalla.value += punto.value;
+    }else if(pantalla.value.split(".").length == 2 && pantalla.value.includes('+')){
+        pantalla.value += punto.value;
+    }else if(pantalla.value.split(".").length == 2 && pantalla.value.includes('-')){
+        pantalla.value += punto.value;
+    }else if(pantalla.value.split(".").length == 2 && pantalla.value.includes('*')){
+        pantalla.value += punto.value;
+    }else if(pantalla.value.split(".").length == 2 && pantalla.value.includes('/')){
+        pantalla.value += punto.value;
+    }
 })    
 
 igual.addEventListener("click", () => {
